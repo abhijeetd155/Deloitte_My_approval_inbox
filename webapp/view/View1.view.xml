@@ -1,10 +1,46 @@
-<mvc:View controllerName="com.Deloitte.Deloitte_My_approval_inbox.controller.View1" xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
+<mvc:View controllerName="com.Deloitte.Deloitte_My_approval_inbox.controller.View1" xmlns:mvc="sap.ui.core.mvc" displayBlock="true" xmlns:u="sap.ui.unified"
 	xmlns="sap.m">
 	<Shell id="shell">
 		<App id="app">
 			<pages>
 				<Page id="page" title="{i18n>title}">
-					<content></content>
+					<content>
+						<u:SplitContainer id="mySplitContainer" showSecondaryContent="true">
+							<u:secondaryContent>
+								<Text text="List will appear here"/>
+							</u:secondaryContent>
+							<u:content>
+							<IconTabBar id="idIconTabBarMulti" expanded="{device>/isNoPhone}" class="sapUiResponsiveContentPadding">
+							<items>
+								<IconTabFilter icon="sap-icon://hint">
+									
+									<Text text="Info content goes here ..."/>
+								
+								</IconTabFilter>
+								<IconTabFilter icon="sap-icon://attachment" count="3">
+									<Text text="Attachments go here ..."/>
+								</IconTabFilter>
+								<IconTabFilter icon="sap-icon://notes" count="12">
+									<Text text="Notes go here ..."/>
+								</IconTabFilter>
+								<IconTabFilter icon="sap-icon://group">
+									<Text text="People content goes here ..."/>
+								</IconTabFilter>
+							</items>
+						</IconTabBar>
+							</u:content>
+						</u:SplitContainer>
+						
+					</content>
+					<footer>
+			<OverflowToolbar>
+				<ToolbarSpacer/>
+				<Button text="Accept" type="Accept" />
+				<Button text="Reject" type="Reject" />
+				<Button text="Forward" type="Ghost"/>
+				
+			</OverflowToolbar>
+		</footer>
 				</Page>
 			</pages>
 		</App>
